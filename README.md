@@ -154,7 +154,6 @@ https://console.developers.google.com/?hl=JA
 
 redirect_uriの設定などは「認証情報」からOAuthクライアントIDを作成、選択して設定が可能です。
 
-```
 
 ## 参考にしたサイト
 
