@@ -1,0 +1,60 @@
+<h1>iijmioのステータス</h1>
+<div class="col-lg-6">
+  <div class="card">
+    <div class="card-header">
+      <h3 class="box-title">About Your Status</h3>
+    </div>
+    <div class="card-body">
+      <strong>
+        <i class="fa fa-book margin-r-5"></i>
+        Your Account
+      </strong>
+      <p class="text-muted">
+        <%= current_user.email %>
+      </p>
+
+      <hr>
+      <strong>
+        <i class="fa fa-phone margin-r-5"></i>
+        Tel-Number</strong>
+
+      <p class="text-muted">
+        <%= @user.tel_number %>
+      </p>
+      <hr>
+      <strong>
+        <i class="fa fa-ticket margin-r-5"></i>
+        developer_id
+        <%= form_tag(pages_mio_update_user_path, remote: true) do %>
+          <p class="text-muted">
+            <input id="dev_id" type="text" name="developer_id" value="<%= @user.developer_id %>">
+            (19文字)
+            <button type="submit" id="save_dev_id" class="btn btn-primary btn-sm">保存</button>
+          </p>
+        <% end %>
+
+      </strong>
+      <hr>
+      <strong>
+        <i class="fa fa-plug margin-r-5"></i>
+        access_token
+        <p class="text-muted">
+          <%= @user.access_token %>
+        </p>
+        expires_in
+        <p class="text-muted">
+          <%= @user.expires_in %>
+        </p>
+      </strong>
+    </div>
+    <!-- /.box-body -->
+    <div class="box">
+      <div class="box-body">
+        <%= link_to "認証する", "https://api.iijmio.jp/mobile/d/v1/authorization/?response_type=token&client_id=#{@user.developer_id}&redirect_uri=#{request.protocol}#{request.raw_host_with_port}/pages/callback&state=#{::SecureRandom.hex(16)}", :class => "btn btn-block btn-primary" %>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- /.box-header -->

@@ -1,0 +1,63 @@
+<h1>iijmio パケット使用量</h1>
+<div class="col-lg-6">
+  <div class="card card-primary card-outline">
+    <div class="card-header">
+      <h3 class="box-title"><%= @target_date.strftime('%Y%m') %>使用量</h3>
+    </div>
+    <div class="card-body">
+      <strong>
+        <i class="fa fa-book margin-r-5"></i>
+        Your Account</strong>
+
+      <p class="text-muted">
+        <%= current_user.email %>
+      </p>
+      <p class="text-muted">
+        <%= button_to "データを更新する", pages_mio_update_path, :class => "btn btn-block btn-primary " %>
+      </p>
+      <p class="text-muted">
+        <%= link_to "CSVエクスポート", pages_mio_data_path(format: :csv), :class => "btn btn-block btn-primary" %>
+      </p>
+
+    </div>
+  </div>
+  <!-- /.box-header -->
+</div>
+<div class="col-lg-6">
+  <div class="card">
+    <div class="card-header">
+      <h3 class="card-title">データ使用量一覧</h3>
+      <%= chartjs_line_chart @graph_data %>
+      <div class="form-group">
+        <%= form_tag pages_mio_data_path, method: :get do %>
+          <%= select_year @target_date, {selected: @target_date.year}, {class: "form-control"} %>
+          <%= select_month @target_date, {selected: @target_date.month, use_month_numbers: true}, {class: "form-control"} %>
+          <%= submit_tag '変更', {class: 'form-control'} %>
+        <% end %>
+      </div>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+      <table class="table table-bordered">
+        <thead>
+        <tr>
+          <th style="width: 20px">日付</th>
+          <th>LTE/3G合計パケット量</th>
+          <th>200k合計パケット量</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @items.each do |item| %>
+          <tr>
+            <td><%= item['day'] %></td>
+            <td><%= item['lte_data'] %></td>
+            <td><%= item['restricted_data'] %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+    <!-- /.card-body -->
+  </div>
+  <!-- /.card -->
+</div>

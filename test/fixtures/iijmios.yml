@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2016-06-11 20:00:16
+  lte_data: 1
+  restricted_data: 1
+
+two:
+  date: 2016-06-11 20:00:16
+  lte_data: 1
+  restricted_data: 1

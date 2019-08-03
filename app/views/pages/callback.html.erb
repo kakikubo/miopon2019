@@ -1,0 +1,11 @@
+<div class="card-body">
+  <h1>アクセスキーの登録</h1>
+
+
+  <%= form_tag(pages_register_path, remote: true, name: "register_form") do %>
+    <p class="text-muted">
+      <%= button_tag "登録", :id => "register_button", :class => "btn btn-block btn-primary btn-sm" %>
+    </p>
+  <% end %>
+  <%= javascript_pack_tag 'pages' %>
+</div>
