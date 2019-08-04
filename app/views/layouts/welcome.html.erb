@@ -30,7 +30,7 @@
       <div class="social-auth-links text-center mb-3">
         <p class="login-box-msg">Googleアカウントでログインしてください</p>
 
-        <%= link_to( user_google_omniauth_authorize_path, {:class => "btn btn-block btn-danger"}) do %>
+        <%= button_to user_google_omniauth_authorize_path, {method: :post, :class => "btn btn-block btn-danger"} do %>
           <i class="fa fa-google-plus mr-2"></i>Sign in with Google
         <% end %>
       </div>

@@ -62,8 +62,9 @@ gem 'devise', '4.6.2'
 gem 'dotenv-rails'
 gem 'faraday'
 gem 'mechanize'
-gem "omniauth-rails_csrf_protection"
+gem "omniauth"
 gem 'omniauth-google-oauth2'
+gem "omniauth-rails_csrf_protection"
 gem 'pry-rails'
 gem 'rails_12factor', group: :production
 gem 'webpacker', '~> 4.0.7'
