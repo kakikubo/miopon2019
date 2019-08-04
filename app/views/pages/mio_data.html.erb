@@ -3,6 +3,14 @@
   <div class="card card-primary card-outline">
     <div class="card-header">
       <h3 class="box-title"><%= @target_date.strftime('%Y%m') %>使用量</h3>
+      <div class="card-tools">
+        <button type="button" class="btn btn-tool" data-widget="collapse">
+          <i class="fas fa-minus"></i>
+        </button>
+        <button type="button" class="btn btn-tool" data-widget="remove">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
     </div>
     <div class="card-body">
       <strong>
