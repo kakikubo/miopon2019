@@ -59,7 +59,7 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'activerecord-import', '~> 0.23.0'
 gem 'bcrypt', '~> 3.1.7'
-gem 'devise', '4.6.2'
+gem 'devise', '4.7.1'
 gem 'dotenv-rails'
 gem 'faraday'
 gem 'mechanize'
