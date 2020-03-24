@@ -68,4 +68,4 @@ gem 'omniauth-google-oauth2'
 gem "omniauth-rails_csrf_protection"
 gem 'pry-rails'
 gem 'rails_12factor', group: :production
-gem 'webpacker', '~> 4.0.7'
+gem 'webpacker', '~> 5.0.1'
