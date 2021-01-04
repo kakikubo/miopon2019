@@ -7,7 +7,7 @@ ruby '2.6.3' # degraded . cause it's relied package libv8 and el capitan has kno
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'chartjs-ror'
-gem 'nokogiri', '~> 1.10.4'
+gem 'nokogiri', '~> 1.11.0'
 gem 'rails', '~> 6.0.0.rc2'
 gem 'railties', '~> 6.0.0.rc2'
 # Use postgresql as the database for Active Record
